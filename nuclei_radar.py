@@ -1,6 +1,5 @@
 import os
 import shutil
-import checksumdir
 
 def nuclei_radar():
 
@@ -33,16 +32,6 @@ def filter():
                 shutil.copy2(file_path,os.path.join(tempelate_database,file))
 
     
-def collect_dirs_hashs():
-    root_dir = 'templates'
-
-    for root ,dirs ,files in os.walk(root_dir):
-        for directory in dirs : 
-
-            print(os.path.join(directory)+" : " +checksumdir.dirhash(os.path.join(root ,directory)))
-
-
-
-
-
-collect_dirs_hashs()
+    
+nuclei_radar()
+filter()
